@@ -12,6 +12,8 @@ const { url } = require("inspector");
 const wrapAsync = require("./utils/wrapAsync.js");
 const ExpressError = require("./utils/ExpressError.js");
 const {listingSchema} = require("./schema.js");
+const Review = require("./models/review.js"); 
+
 
 
 
@@ -125,9 +127,23 @@ app.delete("/listings/:id",wrapAsync(async (req,res,next)=>{
 }));
 
 
+//Reviews
+// post
+app.post("/listings/:id/review",async (req,res)=>{
+  let listing = await Listing.findById(req.params.id);
+  let newReview = new Review(req.body.review);
+
+  listing.reviews.push(newReview);
+  await newReview.save();
+  await listing.save();
+
+  res.redirect(`/listings/${listing._id}`);
+});
+
 app.use((req,res,next)=>{
    next(new ExpressError(404, "Page not found!"));
-})
+});
+
 
 //error middleare
 app.use((err,req,res,next)=>{
@@ -135,6 +151,11 @@ app.use((err,req,res,next)=>{
    res.status(status).render("error.ejs",{message});
   // res.status(status).send(message);
 });
+
+
+
+
+
 
 app.listen(port,()=>{
     console.log(`Server is listening to ${port}`);

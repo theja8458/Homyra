@@ -10,22 +10,25 @@
       <img src="<%= list.image.url %>" class="card-img-top show-img" alt="listing_image" >
       <div class="card-body">
         <p class="card-text">
-          <b><%= list.title %></b><br> <br>
-          <%= list.description %> <br> 
-          &#8377;<%= list.price.toLocaleString("en-IN") %> <br> 
-          <%= list.location %> <br>
-          <%= list.country %>
+          <!-- <b><%= list.title %></b><br> <br> -->
+         <p>Owned by <i><%= list.owner.username %></i></p>
+         <p> <%= list.description %> </p>
+          <p>&#8377;<%= list.price.toLocaleString("en-IN") %></p>
+          <p><%= list.location %> </p>
+         <p> <%= list.country %> </p>
         </p>
       </div>
     </div>
   <br>
-<div class="btns mb-5">
+
+  <% if(curUser &&  curUser._id.equals(list.owner._id)) { %>
+<div class="btns mb-3 ms-3">
   <a href="/listings/<%=list._id%>/edit" class="btn btn-dark col-1 offset-3 edit-btn">Edit</a>
   <form method ="post" action="/listings/<%= list._id %>?_method=delete">
-    <button class="btn btn-dark  offset-5 ">Delete</button>
+    <button class="btn btn-dark  offset-4 ">Delete</button>
   </form>
 </div>
-
+ <%}%>
   <div class="col-8 offset-3 mb-3">
     <hr>
     <h4>Leave a review</h4>

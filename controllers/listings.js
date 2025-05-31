@@ -22,12 +22,15 @@ module.exports.showListing = async (req, res,next) => {
 };
 
 module.exports.createListing = async (req,res,next)=>{
+  let url = req.file.path;
+  let filename = req.file.filename;
+  console.log(url, ".." , filename);
    const { listing } = req.body;
     const newListing = new Listing({
         ...listing,
         image: {
-            url: listing.image, 
-            filename: "default", 
+            url: url, 
+            filename: filename, 
         },
         owner : req.user._id
     });

@@ -77,34 +77,17 @@ app.use((req,res,next)=>{
   next();
 });
 
-// app.get("/demouser",async(req,res)=>{
-//   let fakeUser = new User({
-//     email:"student@gmail.com",
-//     username:"Delta-Student",
-//   });
-
-//  const newUser =  await User.register(fakeUser,"helloworld");
-// //  await newUser.save();
-// res.send(newUser);
-// });
-
-
-
 app.use("/listings",listingsRouter);
 app.use("/listings/:id/review",reviewsRouter);
 app.use("/",userRouter);
-
 
 app.use((req,res,next)=>{
    next(new ExpressError(404, "Page not found!"));
 });
 
-
-//error middleare
 app.use((err,req,res,next)=>{
    const { status = 500, message = "Something went wrong" } = err;
    res.status(status).render("error.ejs",{message});
-  // res.status(status).send(message);
 });
 
 app.listen(port,()=>{

@@ -53,9 +53,9 @@ const sessionOptions = {
   },
 };
 
-app.get("/", (req,res)=>{
- res.send("Root");
-});
+// app.get("/", (req,res)=>{
+//  res.send("Root");
+// });
 
 
 app.use(session(sessionOptions));

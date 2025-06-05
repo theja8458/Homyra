@@ -106,3 +106,10 @@ body{
     padding-left: 0;
     padding-right: 0;
 }
+
+
+/* Map Style */
+#map { 
+height: 400px;
+width: 80vh;
+}

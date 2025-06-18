@@ -93,7 +93,6 @@ body{
     border: none !important;
 }
 
-
 .show-img{
     height: 30vh;
 }
@@ -107,9 +106,369 @@ body{
     padding-right: 0;
 }
 
-
 /* Map Style */
 #map { 
-height: 400px;
-width: 80vh;
+    height: 400px;
+    width: 80vh;
+}
+
+/* ===== RESPONSIVE MEDIA QUERIES ===== */
+
+/* Large screens (desktops, 1200px and up) */
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1140px;
+    }
+    
+    #map {
+        width: 100%;
+        max-width: 800px;
+    }
+}
+
+/* Medium screens (tablets, 768px to 1199px) */
+@media (max-width: 1199px) and (min-width: 768px) {
+    .navbar {
+        height: auto;
+        padding: 1rem;
+    }
+    
+    .fa-compass {
+        font-size: 1.8rem;
+    }
+    
+    #map {
+        width: 100%;
+        height: 350px;
+    }
+    
+    .show-img {
+        height: 25vh;
+    }
+    
+    .f-info {
+        height: auto;
+        padding: 1rem;
+    }
+    
+    .f-info-socials i {
+        font-size: 1.1rem;
+        margin-right: 0.8rem;
+    }
+}
+
+/* Small screens (phones, 576px to 767px) */
+@media (max-width: 767px) {
+    .navbar {
+        height: auto;
+        padding: 0.5rem 1rem;
+    }
+    
+    .navbar-brand {
+        margin-right: 0;
+    }
+    
+    .fa-compass {
+        font-size: 1.5rem;
+    }
+    
+    .navbar-nav {
+        margin-top: 1rem;
+    }
+    
+    .navbar-nav .nav-link {
+        padding: 0.5rem 0;
+        text-align: center;
+    }
+    
+    /* Search form responsive */
+    .navbar-nav form {
+        width: 100%;
+        margin: 1rem 0;
+    }
+    
+    .search-inp {
+        border-radius: 15px;
+        padding: 0.4rem 1rem;
+        font-size: 0.9rem;
+        margin-bottom: 0.5rem;
+    }
+    
+    .search-btn {
+        width: 100%;
+        border-radius: 15px;
+        padding: 0.5rem;
+    }
+    
+    /* Listing cards */
+    .listing-card {
+        margin-bottom: 1.5rem;
+    }
+    
+    .card-img-top {
+        height: 200px;
+    }
+    
+    /* Show page adjustments */
+    .show-card {
+        margin: 0 1rem;
+    }
+    
+    .show-img {
+        height: 200px;
+    }
+    
+    .btns {
+        flex-direction: column;
+        gap: 1rem;
+        padding: 0 1rem;
+    }
+    
+    .btns .btn {
+        width: 100%;
+        margin: 0;
+    }
+    
+    .btns form {
+        width: 100%;
+    }
+    
+    /* Map responsive */
+    #map {
+        width: 100%;
+        height: 250px;
+        margin: 1rem 0;
+    }
+    
+    /* Forms responsive */
+    .row .col-8.offset-2,
+    .row .col-6.offset-3 {
+        margin: 0 1rem;
+        width: calc(100% - 2rem);
+    }
+    
+    /* Footer responsive */
+    .f-info {
+        height: auto;
+        padding: 1rem;
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .f-info-links {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    
+    .f-info-socials i {
+        font-size: 1.3rem;
+        margin-right: 1rem;
+    }
+    
+    /* Review cards */
+    .card.col-5 {
+        width: 100%;
+        margin: 0 0 1rem 0;
+    }
+    
+    /* Filter section */
+    #filters {
+        padding: 0 1rem;
+        justify-content: flex-start;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+    
+    .filter {
+        margin-right: 1rem;
+        min-width: 60px;
+        flex-shrink: 0;
+    }
+    
+    .tax-toggle {
+        margin-left: 1rem;
+        margin-top: 1rem;
+        width: calc(100% - 2rem);
+        justify-content: center;
+    }
+}
+
+/* Extra small screens (phones, less than 576px) */
+@media (max-width: 575px) {
+    body {
+        font-size: 14px;
+    }
+    
+    .navbar {
+        padding: 0.5rem;
+    }
+    
+    .fa-compass {
+        font-size: 1.3rem;
+    }
+    
+    .container {
+        padding: 0 0.5rem;
+    }
+    
+    /* Cards extra small */
+    .card-img-top {
+        height: 180px;
+    }
+    
+    .listing-card {
+        margin-bottom: 1rem;
+    }
+    
+    /* Show page extra small */
+    .show-img {
+        height: 150px;
+    }
+    
+    .show-card {
+        margin: 0 0.5rem;
+    }
+    
+    /* Map extra small */
+    #map {
+        height: 200px;
+    }
+    
+    /* Forms extra small */
+    .row .col-8.offset-2,
+    .row .col-6.offset-3 {
+        margin: 0 0.5rem;
+        width: calc(100% - 1rem);
+    }
+    
+    .form-control {
+        font-size: 14px;
+    }
+    
+    .btn {
+        font-size: 14px;
+        padding: 0.5rem 1rem;
+    }
+    
+    /* Footer extra small */
+    .f-info {
+        padding: 0.5rem;
+    }
+    
+    .f-info-socials i {
+        font-size: 1.1rem;
+        margin-right: 0.8rem;
+    }
+    
+    /* Filter section extra small */
+    .filter {
+        margin-right: 0.8rem;
+        min-width: 50px;
+    }
+    
+    .filter p {
+        font-size: 0.7rem;
+    }
+    
+    .tax-toggle {
+        font-size: 12px;
+        padding: 0.5rem;
+        height: auto;
+    }
+    
+    /* Review section */
+    .starability-slot {
+        width: 120px;
+        min-height: 50px;
+    }
+    
+    .starability-slot > label {
+        width: 24px;
+        height: 24px;
+    }
+}
+
+/* Landscape orientation for mobile devices */
+@media (max-width: 767px) and (orientation: landscape) {
+    .show-img {
+        height: 40vh;
+    }
+    
+    #map {
+        height: 40vh;
+    }
+    
+    .navbar {
+        height: auto;
+    }
+}
+
+/* Print styles */
+@media print {
+    .navbar,
+    .f-info,
+    .btns,
+    #filters,
+    .tax-toggle {
+        display: none;
+    }
+    
+    .show-card {
+        margin: 0;
+        box-shadow: none;
+        border: 1px solid #ddd;
+    }
+    
+    #map {
+        display: none;
+    }
+}
+
+/* High DPI displays */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    .card-img-top,
+    .show-img {
+        image-rendering: -webkit-optimize-contrast;
+        image-rendering: crisp-edges;
+    }
+}
+
+/* Accessibility - Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    .card-img-overlay {
+        transition: none;
+    }
+    
+    .filter:hover {
+        transition: none;
+    }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: #1a1a1a;
+        color: #ffffff;
+    }
+    
+    .navbar {
+        background-color: #2d2d2d !important;
+    }
+    
+    .nav-link {
+        color: #ffffff !important;
+    }
+    
+    .card {
+        background-color: #2d2d2d;
+        border-color: #404040;
+    }
+    
+    .f-info {
+        background-color: #2d2d2d;
+    }
+    
+    .f-info-links a {
+        color: #ffffff;
+    }
 }

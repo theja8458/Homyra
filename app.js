@@ -27,11 +27,10 @@ const LocalStrategy = require("passport-local");
 const User = require("./models/user.js");
 
 main().then(()=>{
-  console.log("Connceted to DB");
+  console.log("Connected to DB");
 }).catch(err=>{
-    console.log(err);
+    console.log("Database connection error:", err);
 });
-
 
 async function main(){
   await mongoose.connect(dbUrl);
@@ -68,21 +67,17 @@ const sessionOptions = {
   },
 };
 
-// app.get("/", (req,res)=>{
-//  res.send("Root");
-// });
-
-
-
+// Root route to redirect to listings
+app.get("/", (req,res)=>{
+ res.redirect("/listings");
+});
 
 app.use(session(sessionOptions));
 app.use(flash());
 
-
 app.use(passport.initialize());
 app.use(passport.session());
 passport.use(new LocalStrategy(User.authenticate()));
-
 
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());

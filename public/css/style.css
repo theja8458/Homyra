@@ -11,7 +11,7 @@ body{
 
 .navbar{
     height: 5rem;
-    background-color: white;
+    background-color: white !important;
 }
 .fa-compass{
     color: #fe424d;
@@ -42,12 +42,13 @@ body{
 .f-info-socials i{
     font-size: 1.2rem;
     margin-right: 1rem;
+    color: #222222 !important;
 }
 .f-info{
     text-align: center;
     height: 8rem;
     display: flex;
-    background-color: #ebebeb;
+    background-color: #ebebeb !important;
     flex-wrap: wrap;
     justify-content: center;
     align-items: space-evenly;
@@ -112,6 +113,82 @@ body{
     width: 80vh;
 }
 
+/* Review Section Styles */
+.review-section {
+    width: 100%;
+    margin: 0;
+    padding: 0 15px;
+}
+
+.review-form {
+    width: 100%;
+    margin-bottom: 2rem;
+}
+
+.review-cards-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.review-card {
+    width: 100%;
+    margin: 0 0 1rem 0;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 1rem;
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.review-card .card-body {
+    padding: 0;
+}
+
+.review-card .card-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: #333;
+}
+
+.review-card .card-text {
+    margin-bottom: 0.5rem;
+    line-height: 1.4;
+}
+
+.review-delete-btn {
+    background-color: #dc3545;
+    border: none;
+    color: white;
+    padding: 0.4rem 0.8rem;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+}
+
+.review-delete-btn:hover {
+    background-color: #c82333;
+}
+
+/* Star Rating Responsive */
+.starability-result,
+.starability-slot {
+    width: 120px;
+    min-height: 24px;
+}
+
+.starability-result:after,
+.starability-slot > label {
+    height: 24px;
+}
+
+.starability-slot > label {
+    width: 24px;
+    height: 24px;
+}
+
 /* ===== RESPONSIVE MEDIA QUERIES ===== */
 
 /* Large screens (desktops, 1200px and up) */
@@ -124,6 +201,16 @@ body{
         width: 100%;
         max-width: 800px;
     }
+    
+    .review-cards-container {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
+    
+    .review-card {
+        width: calc(50% - 0.5rem);
+    }
 }
 
 /* Medium screens (tablets, 768px to 1199px) */
@@ -131,6 +218,15 @@ body{
     .navbar {
         height: auto;
         padding: 1rem;
+        background-color: white !important;
+    }
+    
+    .navbar-toggler {
+        border-color: #222222 !important;
+    }
+    
+    .navbar-toggler-icon {
+        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%2833, 37, 41, 0.75%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
     }
     
     .fa-compass {
@@ -149,11 +245,21 @@ body{
     .f-info {
         height: auto;
         padding: 1rem;
+        background-color: #ebebeb !important;
     }
     
     .f-info-socials i {
         font-size: 1.1rem;
         margin-right: 0.8rem;
+        color: #222222 !important;
+    }
+    
+    .review-cards-container {
+        flex-direction: column;
+    }
+    
+    .review-card {
+        width: 100%;
     }
 }
 
@@ -162,6 +268,7 @@ body{
     .navbar {
         height: auto;
         padding: 0.5rem 1rem;
+        background-color: white !important;
     }
     
     .navbar-brand {
@@ -179,6 +286,15 @@ body{
     .navbar-nav .nav-link {
         padding: 0.5rem 0;
         text-align: center;
+        color: #222222 !important;
+    }
+    
+    .navbar-toggler {
+        border-color: #222222 !important;
+    }
+    
+    .navbar-toggler-icon {
+        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%2833, 37, 41, 0.75%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
     }
     
     /* Search form responsive */
@@ -253,6 +369,7 @@ body{
         padding: 1rem;
         flex-direction: column;
         gap: 1rem;
+        background-color: #ebebeb !important;
     }
     
     .f-info-links {
@@ -260,15 +377,64 @@ body{
         gap: 0.5rem;
     }
     
+    .f-info-links a {
+        color: #222222 !important;
+    }
+    
     .f-info-socials i {
         font-size: 1.3rem;
         margin-right: 1rem;
+        color: #222222 !important;
     }
     
-    /* Review cards */
-    .card.col-5 {
+    .f-info-brand {
+        color: #222222 !important;
+    }
+    
+    /* Review section mobile */
+    .review-section {
+        padding: 0 1rem;
+    }
+    
+    .review-form {
+        margin-bottom: 1.5rem;
+    }
+    
+    .review-cards-container {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .review-card {
         width: 100%;
-        margin: 0 0 1rem 0;
+        margin: 0;
+        padding: 1rem;
+    }
+    
+    .review-card .card-title {
+        font-size: 1rem;
+    }
+    
+    .review-card .card-text {
+        font-size: 0.9rem;
+    }
+    
+    .review-delete-btn {
+        width: 100%;
+        margin-top: 1rem;
+        padding: 0.6rem;
+    }
+    
+    /* Star rating mobile */
+    .starability-result,
+    .starability-slot {
+        width: 100px;
+        min-height: 20px;
+    }
+    
+    .starability-slot > label {
+        width: 20px;
+        height: 20px;
     }
     
     /* Filter section */
@@ -301,6 +467,7 @@ body{
     
     .navbar {
         padding: 0.5rem;
+        background-color: white !important;
     }
     
     .fa-compass {
@@ -353,11 +520,55 @@ body{
     /* Footer extra small */
     .f-info {
         padding: 0.5rem;
+        background-color: #ebebeb !important;
     }
     
     .f-info-socials i {
         font-size: 1.1rem;
         margin-right: 0.8rem;
+        color: #222222 !important;
+    }
+    
+    .f-info-links a {
+        color: #222222 !important;
+    }
+    
+    .f-info-brand {
+        color: #222222 !important;
+    }
+    
+    /* Review section extra small */
+    .review-section {
+        padding: 0 0.5rem;
+    }
+    
+    .review-card {
+        padding: 0.8rem;
+    }
+    
+    .review-card .card-title {
+        font-size: 0.95rem;
+    }
+    
+    .review-card .card-text {
+        font-size: 0.85rem;
+    }
+    
+    .review-delete-btn {
+        font-size: 0.8rem;
+        padding: 0.5rem;
+    }
+    
+    /* Star rating extra small */
+    .starability-result,
+    .starability-slot {
+        width: 90px;
+        min-height: 18px;
+    }
+    
+    .starability-slot > label {
+        width: 18px;
+        height: 18px;
     }
     
     /* Filter section extra small */
@@ -375,17 +586,6 @@ body{
         padding: 0.5rem;
         height: auto;
     }
-    
-    /* Review section */
-    .starability-slot {
-        width: 120px;
-        min-height: 50px;
-    }
-    
-    .starability-slot > label {
-        width: 24px;
-        height: 24px;
-    }
 }
 
 /* Landscape orientation for mobile devices */
@@ -400,6 +600,7 @@ body{
     
     .navbar {
         height: auto;
+        background-color: white !important;
     }
 }
 
@@ -465,10 +666,18 @@ body{
     }
     
     .f-info {
-        background-color: #2d2d2d;
+        background-color: #2d2d2d !important;
     }
     
     .f-info-links a {
-        color: #ffffff;
+        color: #ffffff !important;
+    }
+    
+    .f-info-socials i {
+        color: #ffffff !important;
+    }
+    
+    .f-info-brand {
+        color: #ffffff !important;
     }
 }

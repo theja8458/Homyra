@@ -27,10 +27,11 @@ const LocalStrategy = require("passport-local");
 const User = require("./models/user.js");
 
 main().then(()=>{
-  console.log("Connected to DB");
+  console.log("Connceted to DB");
 }).catch(err=>{
-    console.log("Database connection error:", err);
+    console.log(err);
 });
+
 
 async function main(){
   await mongoose.connect(dbUrl);
@@ -51,7 +52,7 @@ const store = MongoStore.create({
   touchAfter: 24*3600,
 });
 
-store.on("error",(err)=>{
+store.on("error",()=>{
   console.log("Error in mongo session store",err);
 })
 
@@ -67,17 +68,21 @@ const sessionOptions = {
   },
 };
 
-// Root route to redirect to listings
 app.get("/", (req,res)=>{
  res.redirect("/listings");
 });
 
+
+
+
 app.use(session(sessionOptions));
 app.use(flash());
+
 
 app.use(passport.initialize());
 app.use(passport.session());
 passport.use(new LocalStrategy(User.authenticate()));
+
 
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());

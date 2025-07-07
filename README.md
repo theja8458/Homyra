@@ -2,6 +2,8 @@
 
 A full-stack web application that replicates the core functionality of Airbnb, allowing users to list properties, browse accommodations, and leave reviews.
 
+**Live Demo:** https://homyra.onrender.com
+
 ## 🚀 Features
 
 - **User Authentication**: Sign up, login, and logout functionality

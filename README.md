@@ -11,7 +11,6 @@ A full-stack web application that replicates the core functionality of Airbnb, a
 - **Interactive Maps**: View property locations using Mapbox
 - **Responsive Design**: Mobile-friendly interface
 - **Search Functionality**: Search for destinations
-- **Filter Options**: Filter properties by categories (trending, rooms, mountains, etc.)
 - **Authorization**: Only property owners can edit/delete their listings
 - **Flash Messages**: User feedback for actions
 
@@ -148,7 +147,7 @@ wonderlust/
 ## 🎨 UI Features
 
 - **Responsive Design**: Works on desktop, tablet, and mobile
-- **Filter Categories**: Trending, Rooms, Mountains, Castles, etc.
+- **Filter Display**: Visual filter categories (Trending, Rooms, Mountains, Castles, etc.)
 - **Tax Toggle**: Option to display prices with/without taxes
 - **Flash Messages**: Success and error notifications
 - **Form Validation**: Client and server-side validation

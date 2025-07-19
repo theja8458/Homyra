@@ -148,7 +148,6 @@ wonderlust/
 ## 🎨 UI Features
 
 - **Responsive Design**: Works on desktop, tablet, and mobile
-- **Filter Display**: Visual filter categories (Trending, Rooms, Mountains, Castles, etc.)
 - **Tax Toggle**: Option to display prices with/without taxes
 - **Flash Messages**: Success and error notifications
 - **Form Validation**: Client and server-side validation

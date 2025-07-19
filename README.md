@@ -12,7 +12,6 @@ A full-stack web application that replicates the core functionality of Airbnb, a
 - **Reviews & Ratings**: Leave reviews and star ratings for properties
 - **Interactive Maps**: View property locations using Mapbox
 - **Responsive Design**: Mobile-friendly interface
-- **Search Functionality**: Search for destinations
 - **Authorization**: Only property owners can edit/delete their listings
 - **Flash Messages**: User feedback for actions
 

@@ -212,4 +212,4 @@ This project is for educational purposes.
 
 ---
 
-**Note**: This is a learning project created to understand full-stack web development concepts including authentication, CRUD operations, file uploads, and third-party API integrations.
+**Note**: This is a learning project created to understand full-stack web development concepts including authentication, CRUD operations, file uploads, and third-party API integrations....

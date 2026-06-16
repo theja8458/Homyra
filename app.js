@@ -34,7 +34,12 @@ main().then(()=>{
 
 
 async function main(){
-   await mongoose.connect(dbUrl);
+  const isLocal = dbUrl.includes("127.0.0.1") || dbUrl.includes("localhost");
+  const options = isLocal ? {} : {
+    tls: true,
+    tlsAllowInvalidCertificates: false,
+  };
+  await mongoose.connect(dbUrl, options);
 }
 
 app.set("view engine","ejs");

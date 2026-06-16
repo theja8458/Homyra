@@ -9,6 +9,12 @@ const port = 8080;
 // const monogUrl = 'mongodb://127.0.0.1:27017/wonderlust';
 const dbUrl = process.env.ATLASDB_URL;
 
+const isLocal = dbUrl.includes("127.0.0.1") || dbUrl.includes("localhost");
+const dbOptions = isLocal ? {} : {
+  tls: true,
+  tlsAllowInvalidCertificates: false,
+};
+
 const ejsMate = require("ejs-mate");
 const path = require("path");
 const methodOverride = require("method-override");
@@ -33,11 +39,6 @@ main().then(()=>{
 });
 
 
-const isLocal = dbUrl.includes("127.0.0.1") || dbUrl.includes("localhost");
-const dbOptions = isLocal ? {} : {
-  tls: true,
-  tlsAllowInvalidCertificates: false,
-};
 
 async function main(){
   await mongoose.connect(dbUrl, dbOptions);

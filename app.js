@@ -33,13 +33,14 @@ main().then(()=>{
 });
 
 
+const isLocal = dbUrl.includes("127.0.0.1") || dbUrl.includes("localhost");
+const dbOptions = isLocal ? {} : {
+  tls: true,
+  tlsAllowInvalidCertificates: false,
+};
+
 async function main(){
-  const isLocal = dbUrl.includes("127.0.0.1") || dbUrl.includes("localhost");
-  const options = isLocal ? {} : {
-    tls: true,
-    tlsAllowInvalidCertificates: false,
-  };
-  await mongoose.connect(dbUrl, options);
+  await mongoose.connect(dbUrl, dbOptions);
 }
 
 app.set("view engine","ejs");
@@ -51,6 +52,7 @@ app.use(express.static(path.join(__dirname,"/public")));
 
 const store = MongoStore.create({
   mongoUrl: dbUrl,
+  mongoOptions: dbOptions,
   crypto:{
     secret: process.env.SECRET,
   },
